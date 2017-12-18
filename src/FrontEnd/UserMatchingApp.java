@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+import service.MatchingService;
+
 public class UserMatchingApp {
 
 	public static void main(String[] args) {
@@ -28,6 +30,11 @@ public class UserMatchingApp {
 
 		Set<String> user2Preferences = collectUserPreferences();
 		System.out.println("User 2 Preferences are " + user2Preferences);
+		
+		MatchingService service = new MatchingService();
+		System.out.println("Match percentage is: " + 
+		service.calculateMatchPercentage(user1Preferences, 
+				user2Preferences));
 
 	}
 
